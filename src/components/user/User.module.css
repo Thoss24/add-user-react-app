@@ -19,6 +19,7 @@
 
 .input-shell > input {
     border: 1px solid #ccc;
+    height: 25px;
 }
 
 .add-user-button-container {
