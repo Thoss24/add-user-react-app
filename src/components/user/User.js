@@ -1,8 +1,9 @@
 import styles from './User.module.css'
 
-const User = () => {
+const User = (props) => {
 
     return (
+        <div className={styles['add-user']}>
         <form className={styles.user}>
             <div className={styles['input-shell']}>
                 <label>Username</label>
@@ -15,8 +16,8 @@ const User = () => {
             <div className={styles['add-user-button-container']}>
                 <button className={styles['add-user-button']} type='submit'>Add User</button>
             </div>
-
         </form>
+        </div>
     )
 }
 

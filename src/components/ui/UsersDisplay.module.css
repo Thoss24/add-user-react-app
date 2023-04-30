@@ -4,8 +4,9 @@
     padding: 0;
 }
 
-.add-user {
+.users-display-container {
     display: flex;
+    flex-direction: column;
     background-color: #a892ee;
     padding: 1rem;
     margin: 2rem auto;

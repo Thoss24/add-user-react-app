@@ -1,13 +1,26 @@
-import AddUser from './components/user/AddUser';
+import User from './components/user/User';
+import UsersDisplay from './components/ui/UsersDisplay';
 import './App.css';
 
 function App() {
 
-  console.log("test")
+  const CurrentUsers = [
+    {
+      id: 1,
+      username: 'James',
+      age: 25
+    },
+    {
+      id: 2,
+      username: 'Ellen',
+      age: 32
+    },
+  ]
 
   return (
     <div>
-      <AddUser />
+      <User />
+      <UsersDisplay items={CurrentUsers}/>
     </div>
   );
 }
