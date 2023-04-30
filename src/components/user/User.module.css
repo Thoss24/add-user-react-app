@@ -1,47 +1,50 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+    padding-left: 6px;
 }
 
 .user {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
 }
 
 .add-user {
-    display: flex;
-    background-color: #a892ee;
-    padding: 1rem;
-    margin: 2rem auto;
-    width: 50rem;
-    max-width: 95%;
-    border-radius: 12px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  background-color: #a892ee;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
 .input-shell {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-
-}  
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 
 .input-shell > input {
-    border: 1px solid #ccc;
-    height: 25px;
+  border: 1px solid #ccc;
+  height: 25px;
 }
 
 .add-user-button-container {
-    width: 100%;
+  width: 100%;
 }
 
 .add-user-button {
-    display: flex;
-    min-width: 10%;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+  display: flex;
+  min-width: 10%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
