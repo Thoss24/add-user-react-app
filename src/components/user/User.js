@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./User.module.css";
+import ErrorModal from "../ui/ErrorModal";
 
 const User = (props) => {
   const [currentUsername, setCurrentUsername] = useState("");
@@ -25,10 +26,13 @@ const User = (props) => {
     setCurrentAge("");
 
     props.onSaveNewUser(newUser);
+
   };
 
-  return (
+
+  let AddUserForm = (
     <div className={styles["add-user"]}>
+      <ErrorModal/>
       <form className={styles.user} onSubmit={submitFormHandler}>
         <div className={styles["input-shell"]}>
           <label>Username</label>
@@ -37,23 +41,31 @@ const User = (props) => {
             name="username"
             id="username"
             onChange={usernameHandler}
+            value={currentUsername}
           />
         </div>
         <div className={styles["input-shell"]}>
           <label>Age (Years)</label>
-          <input type="text" name="age" id="age" onChange={ageHandler} />
+          <input
+            type="text"
+            name="age"
+            id="age"
+            onChange={ageHandler}
+            value={currentAge}
+          />
         </div>
         <div className={styles["add-user-button-container"]}>
-          <button
-            className={styles["add-user-button"]}
-            type="submit"
-          >
+          <button className={styles["add-user-button"]} type="submit">
             Add User
           </button>
         </div>
       </form>
     </div>
   );
+
+  return (
+    <div>{AddUserForm}</div>
+  )
 };
 
 export default User;
