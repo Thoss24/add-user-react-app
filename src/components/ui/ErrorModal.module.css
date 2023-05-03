@@ -20,8 +20,8 @@
 .error-modal-container {
     position: fixed;
     top: 30vh;
-    width: 80%;
-    left: 10%;
+    width: 30%;
+    left: 35%;
     z-index: 100;
     overflow: hidden;
     border-radius: 4px;
@@ -42,6 +42,7 @@
     background-color: white;
     height: 100%;
     padding: 10px;
+    gap: 10px;
 }
 
 .button-container {
@@ -57,4 +58,17 @@
     color: white;
     padding: 8px;
     border-radius: 4px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .error-modal-container {
+        position: fixed;
+        top: 30vh;
+        width: 80%;
+        left: 10%;
+        z-index: 100;
+        overflow: hidden;
+        border-radius: 4px;
+    }
 }
