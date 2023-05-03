@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./User.module.css";
 import ErrorModal from "../ui/ErrorModal";
+import Wrapper from "../helper/Wrapper";
 
 const User = (props) => {
   const [currentUsername, setCurrentUsername] = useState("");
@@ -50,6 +51,7 @@ const User = (props) => {
   };
 
   return (
+    <Wrapper>
     <div className={styles["add-user"]}>
     {error && <ErrorModal head={error.title} body={error.description} onConfirm={errorHandler}/> }
     <form className={styles.user} onSubmit={submitFormHandler}>
@@ -80,6 +82,7 @@ const User = (props) => {
       </div>
     </form>
   </div>
+  </Wrapper>
   )
 };
 

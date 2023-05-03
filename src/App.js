@@ -1,6 +1,7 @@
 import NewUser from "./components/new user/NewUser";
 import UsersDisplay from "./components/ui/UsersDisplay";
 import React, { useState } from "react";
+import Wrapper from "./components/helper/Wrapper";
 import "./App.css";
 
 const CurrentUsers = [
@@ -26,10 +27,10 @@ function App() {
   }
 
   return (
-    <div>
+    <Wrapper>
       <NewUser onAddUser={addUserHandler}/>
       <UsersDisplay items={users} />
-    </div>
+    </Wrapper>
   );
 }
 
