@@ -1,7 +1,6 @@
 import NewUser from "./components/new user/NewUser";
 import UsersDisplay from "./components/ui/UsersDisplay";
-import React, { useState } from "react";
-import Wrapper from "./components/helper/Wrapper";
+import React, { useState, Fragment } from "react";
 import "./App.css";
 
 const CurrentUsers = [
@@ -27,10 +26,10 @@ function App() {
   }
 
   return (
-    <Wrapper>
+    <Fragment>
       <NewUser onAddUser={addUserHandler}/>
       <UsersDisplay items={users} />
-    </Wrapper>
+    </Fragment>
   );
 }
 
