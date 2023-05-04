@@ -1,32 +1,28 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useRef } from "react";
 import styles from "./User.module.css";
 import ErrorModal from "../ui/ErrorModal";
 
 const User = (props) => {
-  const [currentUsername, setCurrentUsername] = useState("");
-  const [currentAge, setCurrentAge] = useState("");
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
+
   const [error, setError] = useState();
 
-  const usernameHandler = (event) => {
-    setCurrentUsername(event.target.value);
-  };
-
-  const ageHandler = (event) => {
-    setCurrentAge(event.target.value);
-  };
-
   const submitFormHandler = (event) => {
+    const enteredName = nameInputRef.current.value;
+    const enteredAge = ageInputRef.current.value;
+
     event.preventDefault();
 
     const newUser = {
-      username: currentUsername,
-      age: currentAge,
+      username: enteredName,
+      age: enteredAge,
     };
 
-    setCurrentUsername("");
-    setCurrentAge("");
+   nameInputRef.current.value = '';
+   ageInputRef.current.value = '';
 
-    if (currentAge.trim().length === 0 || currentUsername.trim().length === 0) {
+    if (enteredAge.trim().length === 0 || enteredName.trim().length === 0) {
       setError({
         title: 'Input Error',
         description: 'Username and age values cannot be empty'
@@ -34,7 +30,7 @@ const User = (props) => {
       return
     }
 
-    if (+currentAge < 0) {
+    if (+enteredAge < 0) {
       setError({
         title: 'Input Error',
         description: 'Cannot enter negative numbers for age. Age must be greater than 0.'
@@ -60,8 +56,7 @@ const User = (props) => {
           type="text"
           name="username"
           id="username"
-          onChange={usernameHandler}
-          value={currentUsername}
+          ref={nameInputRef}
         />
       </div>
       <div className={styles["input-shell"]}>
@@ -70,8 +65,7 @@ const User = (props) => {
           type="text"
           name="age"
           id="age"
-          onChange={ageHandler}
-          value={currentAge}
+          ref={ageInputRef}
         />
       </div>
       <div className={styles["add-user-button-container"]}>
